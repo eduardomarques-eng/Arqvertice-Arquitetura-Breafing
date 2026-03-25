@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --color-primary: #1A1A1A;
+  --color-secondary: #5A5A5A;
+  --color-accent: #D4AF37;
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-primary)] antialiased selection:bg-[var(--color-primary)] selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+/* Custom scrollbar for a more elegant feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E5E5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CCCCCC;
+}
+
+/* Smooth input transitions */
+input, textarea, select {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Premium Card Hover */
+.premium-card {
+  @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5;
+}
